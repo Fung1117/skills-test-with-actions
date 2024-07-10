@@ -22,3 +22,14 @@ jobs:
       run: |
         npm install remark-cli remark-preset-lint-consistent
         npx remark . --use remark-preset-lint-consistent --frail
+        env:
+          REMARK_CONFIG: |
+            {
+              "plugins": [
+                "remark-preset-lint-consistent",
+                "remark-preset-lint-markdown-style"
+              ],
+              "settings": {
+                "emphasis": "_"
+              }
+            }
